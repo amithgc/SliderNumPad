@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
                         .setTextColor("#FF0000")
                         .setTextSubmitColor("#24d842")
                         .setTextEqualsColor("#5982db")
+                        .setTextSize(20)
                         .create();
                 bottomSheetDialogFragment.show(getSupportFragmentManager());
             }

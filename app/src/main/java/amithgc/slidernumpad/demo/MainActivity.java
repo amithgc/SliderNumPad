@@ -1,5 +1,6 @@
 package amithgc.slidernumpad.demo;
 
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
                         .setTextSubmitColor("#24d842")
                         .setTextEqualsColor("#5982db")
                         .setTextSize(20)
+                        .setTextStyle(Typeface.BOLD_ITALIC)
                         .create();
                 bottomSheetDialogFragment.show(getSupportFragmentManager());
             }

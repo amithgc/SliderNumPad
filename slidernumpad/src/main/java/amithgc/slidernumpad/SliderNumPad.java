@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -348,13 +347,14 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                 infoTextView.setText(infoTextView.getText().toString() +
                         decimalFormat.format(valueTwo) + " = " + decimalFormat.format(valueOne));
                 result.setText(decimalFormat.format(valueOne));
-                valueOne = Double.NaN;
-                CURRENT_ACTION = '0';
 
                 if (equalButtonType == BUTTON_TYPE_DONE) {
                     dismissAllowingStateLoss();
+                    builder.getOnTextSelectedListener().onTextSelected(valueOne);
                 }
 
+                valueOne = Double.NaN;
+                CURRENT_ACTION = '0';
                 equalButtonType = BUTTON_TYPE_DONE;
                 tEnter.setText(">");
                 changeButtonColor(builder.getButtonSubmitBackgroundColor(), lEnter);
@@ -459,7 +459,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
     }
 
     public interface OnTextInputFinishListener {
-        void onTextSelected(Uri uri);
+        void onTextSelected(double value);
     }
 
     public static class Builder {
@@ -564,6 +564,10 @@ public class SliderNumPad extends BottomSheetDialogFragment {
         public Builder setTextStyle(int textStyle) {
             this.textStyle = textStyle;
             return this;
+        }
+
+        public OnTextInputFinishListener getOnTextSelectedListener() {
+            return onTextSelectedListener;
         }
     }
 

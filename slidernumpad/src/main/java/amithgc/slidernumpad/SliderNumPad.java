@@ -373,6 +373,8 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                 t0, t000, tDot, tMinus, tPlus, tDelete, tMultiply, tDivide, tCancel);
         changeButtonTextSize(builder.getTextSize(), t1, t2, t3, t4, t5, t6, t7, t8, t9,
                 t0, t000, tDot, tMinus, tPlus, tDelete, tMultiply, tDivide, tCancel, tEnter);
+        changeButtonTextStyle(builder.getTextStyle(), t1, t2, t3, t4, t5, t6, t7, t8, t9,
+                t0, t000, tDot, tMinus, tPlus, tDelete, tMultiply, tDivide, tCancel, tEnter);
 
         dialog.setContentView(contentView);
     }
@@ -411,6 +413,19 @@ public class SliderNumPad extends BottomSheetDialogFragment {
             try {
                 if (size > 0) {
                     button.setTextSize(size);
+                }
+            } catch (Exception ignored) {
+                ignored.printStackTrace();
+            }
+        }
+    }
+
+    private void changeButtonTextStyle(int style, Button... buttons) {
+
+        for (Button button : buttons) {
+            try {
+                if (style != -1) {
+                    button.setTypeface(button.getTypeface(), style);
                 }
             } catch (Exception ignored) {
                 ignored.printStackTrace();
@@ -457,6 +472,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
         String textEqualsColor = null;
         String textSubmitColor = null;
         float textSize = -1;
+        int textStyle = -1;
         OnTextInputFinishListener onTextSelectedListener;
 
         public Builder(@NonNull Context context) {
@@ -538,6 +554,15 @@ public class SliderNumPad extends BottomSheetDialogFragment {
 
         public Builder setTextSize(float textSize) {
             this.textSize = textSize;
+            return this;
+        }
+
+        public int getTextStyle() {
+            return textStyle;
+        }
+
+        public Builder setTextStyle(int textStyle) {
+            this.textStyle = textStyle;
             return this;
         }
     }

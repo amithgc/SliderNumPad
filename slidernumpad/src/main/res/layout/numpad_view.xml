@@ -36,7 +36,9 @@
         android:columnCount="4"
         android:orientation="horizontal">
 
-        <LinearLayout android:background="@drawable/button_background">
+        <LinearLayout
+            android:id="@+id/lCancel"
+            android:background="@drawable/button_background">
 
             <Button
                 android:id="@+id/tCancel"
@@ -47,7 +49,9 @@
                 android:theme="@style/PrimaryFlatButton" />
         </LinearLayout>
 
-        <LinearLayout android:background="@drawable/button_background">
+        <LinearLayout
+            android:id="@+id/lDivide"
+            android:background="@drawable/button_background">
 
             <Button
                 android:id="@+id/tDivide"
@@ -58,7 +62,9 @@
                 android:theme="@style/PrimaryFlatButton" />
         </LinearLayout>
 
-        <LinearLayout android:background="@drawable/button_background">
+        <LinearLayout
+            android:id="@+id/lMultiply"
+            android:background="@drawable/button_background">
 
             <Button
                 android:id="@+id/tMultiply"
@@ -70,6 +76,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/lDelete"
             android:layout_gravity="fill"
             android:background="@drawable/button_background">
 
@@ -82,7 +89,9 @@
                 android:theme="@style/PrimaryFlatButton" />
         </LinearLayout>
 
-        <LinearLayout android:background="@drawable/button_background">
+        <LinearLayout
+            android:id="@+id/l7"
+            android:background="@drawable/button_background">
 
             <Button
                 android:id="@+id/t7"
@@ -93,7 +102,9 @@
                 android:theme="@style/PrimaryFlatButton" />
         </LinearLayout>
 
-        <LinearLayout android:background="@drawable/button_background">
+        <LinearLayout
+            android:id="@+id/l8"
+            android:background="@drawable/button_background">
 
             <Button
                 android:id="@+id/t8"
@@ -104,7 +115,9 @@
                 android:theme="@style/PrimaryFlatButton" />
         </LinearLayout>
 
-        <LinearLayout android:background="@drawable/button_background">
+        <LinearLayout
+            android:id="@+id/l9"
+            android:background="@drawable/button_background">
 
             <Button
                 android:id="@+id/t9"
@@ -116,6 +129,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/lPlus"
             android:layout_gravity="fill"
             android:background="@drawable/button_background">
 
@@ -128,7 +142,9 @@
                 android:theme="@style/PrimaryFlatButton" />
         </LinearLayout>
 
-        <LinearLayout android:background="@drawable/button_background">
+        <LinearLayout
+            android:id="@+id/l4"
+            android:background="@drawable/button_background">
 
             <Button
                 android:id="@+id/t4"
@@ -139,7 +155,9 @@
                 android:theme="@style/PrimaryFlatButton" />
         </LinearLayout>
 
-        <LinearLayout android:background="@drawable/button_background">
+        <LinearLayout
+            android:id="@+id/l5"
+            android:background="@drawable/button_background">
 
             <Button
                 android:id="@+id/t5"
@@ -150,7 +168,9 @@
                 android:theme="@style/PrimaryFlatButton" />
         </LinearLayout>
 
-        <LinearLayout android:background="@drawable/button_background">
+        <LinearLayout
+            android:id="@+id/l6"
+            android:background="@drawable/button_background">
 
             <Button
                 android:id="@+id/t6"
@@ -162,6 +182,7 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/lMinus"
             android:layout_gravity="fill"
             android:background="@drawable/button_background">
 
@@ -174,7 +195,9 @@
                 android:theme="@style/PrimaryFlatButton" />
         </LinearLayout>
 
-        <LinearLayout android:background="@drawable/button_background">
+        <LinearLayout
+            android:id="@+id/l1"
+            android:background="@drawable/button_background">
 
             <Button
                 android:id="@+id/t1"
@@ -185,7 +208,9 @@
                 android:theme="@style/PrimaryFlatButton" />
         </LinearLayout>
 
-        <LinearLayout android:background="@drawable/button_background">
+        <LinearLayout
+            android:id="@+id/l2"
+            android:background="@drawable/button_background">
 
             <Button
                 android:id="@+id/t2"
@@ -196,7 +221,9 @@
                 android:theme="@style/PrimaryFlatButton" />
         </LinearLayout>
 
-        <LinearLayout android:background="@drawable/button_background">
+        <LinearLayout
+            android:id="@+id/l3"
+            android:background="@drawable/button_background">
 
             <Button
                 android:id="@+id/t3"
@@ -209,6 +236,7 @@
 
 
         <LinearLayout
+            android:id="@+id/lEnter"
             android:layout_gravity="fill"
             android:layout_rowSpan="2"
             android:background="@drawable/button_background">
@@ -222,7 +250,9 @@
                 android:theme="@style/PrimaryFlatButton" />
         </LinearLayout>
 
-        <LinearLayout android:background="@drawable/button_background">
+        <LinearLayout
+            android:id="@+id/l0"
+            android:background="@drawable/button_background">
 
             <Button
                 android:id="@+id/t0"
@@ -233,7 +263,9 @@
                 android:theme="@style/PrimaryFlatButton" />
         </LinearLayout>
 
-        <LinearLayout android:background="@drawable/button_background">
+        <LinearLayout
+            android:id="@+id/l000"
+            android:background="@drawable/button_background">
 
             <Button
                 android:id="@+id/t000"
@@ -244,7 +276,9 @@
                 android:theme="@style/PrimaryFlatButton" />
         </LinearLayout>
 
-        <LinearLayout android:background="@drawable/button_background">
+        <LinearLayout
+            android:id="@+id/lDot"
+            android:background="@drawable/button_background">
 
             <Button
                 android:id="@+id/tDot"

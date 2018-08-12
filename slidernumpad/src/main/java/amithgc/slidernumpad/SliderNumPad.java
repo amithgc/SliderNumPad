@@ -2,22 +2,20 @@ package amithgc.slidernumpad;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.graphics.drawable.Drawable;
+import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.DimenRes;
-import android.support.annotation.DrawableRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.annotation.StringRes;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.BottomSheetDialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.text.DecimalFormat;
@@ -65,6 +63,26 @@ public class SliderNumPad extends BottomSheetDialogFragment {
     private Button tDivide;
     private Button tCancel;
 
+    private LinearLayout l1;
+    private LinearLayout l2;
+    private LinearLayout l3;
+    private LinearLayout l4;
+    private LinearLayout l5;
+    private LinearLayout l6;
+    private LinearLayout l7;
+    private LinearLayout l8;
+    private LinearLayout l9;
+    private LinearLayout l0;
+    private LinearLayout l000;
+    private LinearLayout lDot;
+    private LinearLayout lMinus;
+    private LinearLayout lPlus;
+    private LinearLayout lDelete;
+    private LinearLayout lMultiply;
+    private LinearLayout lDivide;
+    private LinearLayout lCancel;
+    private LinearLayout lEnter;
+
     View contentView;
     private BottomSheetBehavior.BottomSheetCallback mBottomSheetBehaviorCallback = new BottomSheetBehavior.BottomSheetCallback() {
 
@@ -102,8 +120,6 @@ public class SliderNumPad extends BottomSheetDialogFragment {
     @Override
     public void onViewCreated(View contentView, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(contentView, savedInstanceState);
-
-
     }
 
     @Override
@@ -134,6 +150,26 @@ public class SliderNumPad extends BottomSheetDialogFragment {
         tMultiply = contentView.findViewById(R.id.tMultiply);
         tDivide = contentView.findViewById(R.id.tDivide);
         tCancel = contentView.findViewById(R.id.tCancel);
+
+        lEnter = contentView.findViewById(R.id.lEnter);
+        l1 = contentView.findViewById(R.id.l1);
+        l2 = contentView.findViewById(R.id.l2);
+        l3 = contentView.findViewById(R.id.l3);
+        l4 = contentView.findViewById(R.id.l4);
+        l5 = contentView.findViewById(R.id.l5);
+        l6 = contentView.findViewById(R.id.l6);
+        l7 = contentView.findViewById(R.id.l7);
+        l8 = contentView.findViewById(R.id.l8);
+        l9 = contentView.findViewById(R.id.l9);
+        l0 = contentView.findViewById(R.id.l0);
+        l000 = contentView.findViewById(R.id.l000);
+        lDot = contentView.findViewById(R.id.lDot);
+        lMinus = contentView.findViewById(R.id.lMinus);
+        lPlus = contentView.findViewById(R.id.lPlus);
+        lDelete = contentView.findViewById(R.id.lDelete);
+        lMultiply = contentView.findViewById(R.id.lMultiply);
+        lDivide = contentView.findViewById(R.id.lDivide);
+        lCancel = contentView.findViewById(R.id.lCancel);
 
 
         t1.setOnClickListener(new View.OnClickListener() {
@@ -230,6 +266,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
 
                 equalButtonType = BUTTON_TYPE_CALCULATE;
                 tEnter.setText("=");
+                changeButtonColor(builder.getButtonEqualsBackgroundColor(), lEnter);
             }
         });
 
@@ -243,6 +280,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
 
                 equalButtonType = BUTTON_TYPE_CALCULATE;
                 tEnter.setText("=");
+                changeButtonColor(builder.getButtonEqualsBackgroundColor(), lEnter);
             }
         });
 
@@ -256,6 +294,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
 
                 equalButtonType = BUTTON_TYPE_CALCULATE;
                 tEnter.setText("=");
+                changeButtonColor(builder.getButtonEqualsBackgroundColor(), lEnter);
             }
         });
 
@@ -269,6 +308,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
 
                 equalButtonType = BUTTON_TYPE_CALCULATE;
                 tEnter.setText("=");
+                changeButtonColor(builder.getButtonEqualsBackgroundColor(), lEnter);
             }
         });
 
@@ -313,10 +353,32 @@ public class SliderNumPad extends BottomSheetDialogFragment {
 
                 equalButtonType = BUTTON_TYPE_DONE;
                 tEnter.setText(">");
+                changeButtonColor(builder.getButtonSubmitBackgroundColor(), lEnter);
+
             }
         });
 
+
+        changeButtonColor(builder.getButtonBackgroundColor(), lEnter);
+        changeButtonColor(builder.getButtonSubmitBackgroundColor(), lEnter);
+        changeButtonColor(builder.getButtonBackgroundColor(), l1, l2, l3, l4, l5, l6, l7, l8, l9, l0, l000, lDot, lMinus, lPlus, lDelete, lMultiply, lDivide, lCancel);
+
         dialog.setContentView(contentView);
+    }
+
+    private void changeButtonColor(String color, LinearLayout... buttons) {
+
+        for (LinearLayout button : buttons) {
+            try {
+                if (color != null) {
+                    GradientDrawable background = (GradientDrawable) button.getBackground();
+                    background.setColor(Color.parseColor(color));
+                    button.refreshDrawableState();
+                }
+            } catch (Exception ignored) {
+                ignored.printStackTrace();
+            }
+        }
     }
 
     private void computeCalculation() {
@@ -351,66 +413,27 @@ public class SliderNumPad extends BottomSheetDialogFragment {
     public static class Builder {
 
         Context context;
-        Drawable cameraTileDrawable;
-        Drawable galleryTileDrawable;
+        String buttonBackgroundColor = null;
+        String buttonEqualsBackgroundColor = null;
+        String buttonSubmitBackgroundColor = null;
 
-        int spacing = 1;
         OnTextInputFinishListener onTextSelectedListener;
 
-        public String title;
-        public boolean showTitle = true;
-
         public Builder(@NonNull Context context) {
-
             this.context = context;
-
-//            setCameraTile(R.drawable.ic_camera);
-//            setGalleryTile(R.drawable.ic_gallery);
-//            setSpacingResId(R.dimen.tedbottompicker_grid_layout_margin);
         }
 
-        public Builder setCameraTile(@DrawableRes int cameraTileResId) {
-            setCameraTile(ContextCompat.getDrawable(context, cameraTileResId));
+        public Builder setButtonBackgroundColor(String buttonBackgroundColor) {
+            this.buttonBackgroundColor = buttonBackgroundColor;
             return this;
         }
 
-        public Builder setGalleryTile(@DrawableRes int galleryTileResId) {
-            setGalleryTile(ContextCompat.getDrawable(context, galleryTileResId));
-            return this;
-        }
-
-        public Builder setSpacingResId(@DimenRes int dimenResId) {
-            this.spacing = context.getResources().getDimensionPixelSize(dimenResId);
-            return this;
-        }
-
-        public Builder setCameraTile(Drawable cameraTileDrawable) {
-            this.cameraTileDrawable = cameraTileDrawable;
-            return this;
-        }
-
-        public Builder setGalleryTile(Drawable galleryTileDrawable) {
-            this.galleryTileDrawable = galleryTileDrawable;
-            return this;
+        public String getButtonBackgroundColor() {
+            return buttonBackgroundColor;
         }
 
         public Builder setOnTextSelectedListener(OnTextInputFinishListener onTextSelectedListener) {
             this.onTextSelectedListener = onTextSelectedListener;
-            return this;
-        }
-
-        public Builder setTitle(String title) {
-            this.title = title;
-            return this;
-        }
-
-        public Builder setTitle(@StringRes int stringResId) {
-            this.title = context.getResources().getString(stringResId);
-            return this;
-        }
-
-        public Builder showTitle(boolean showTitle) {
-            this.showTitle = showTitle;
             return this;
         }
 
@@ -419,12 +442,28 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                 throw new RuntimeException("onTextSelectedListener is not defined.");
             }
 
-            SliderNumPad customBottomSheetDialogFragment = new SliderNumPad();
-
-            customBottomSheetDialogFragment.builder = this;
-            return customBottomSheetDialogFragment;
+            SliderNumPad customSheetDialogFragment = new SliderNumPad();
+            builder = this;
+            return customSheetDialogFragment;
         }
 
+        public String getButtonEqualsBackgroundColor() {
+            return buttonEqualsBackgroundColor;
+        }
+
+        public Builder setButtonEqualsBackgroundColor(String buttonEqualsBackgroundColor) {
+            this.buttonEqualsBackgroundColor = buttonEqualsBackgroundColor;
+            return this;
+        }
+
+        public String getButtonSubmitBackgroundColor() {
+            return buttonSubmitBackgroundColor;
+        }
+
+        public Builder setButtonSubmitBackgroundColor(String buttonSubmitBackgroundColor) {
+            this.buttonSubmitBackgroundColor = buttonSubmitBackgroundColor;
+            return this;
+        }
     }
 
 

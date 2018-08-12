@@ -31,9 +31,12 @@ public class MainActivity extends AppCompatActivity {
                                 Log.d("ted", "uri.getPath(): " + uri.getPath());
                             }
                         })
-                        .setButtonBackgroundColor("#CCCCCC")
+                        .setButtonBackgroundColor("#EEEEEE")
                         .setButtonEqualsBackgroundColor("#24d842")
                         .setButtonSubmitBackgroundColor("#5982db")
+                        .setTextColor("#FF0000")
+                        .setTextSubmitColor("#24d842")
+                        .setTextEqualsColor("#5982db")
                         .create();
                 bottomSheetDialogFragment.show(getSupportFragmentManager());
             }

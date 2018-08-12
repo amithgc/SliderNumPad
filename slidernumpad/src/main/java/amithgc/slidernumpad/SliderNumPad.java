@@ -362,14 +362,17 @@ public class SliderNumPad extends BottomSheetDialogFragment {
             }
         });
 
-
         changeButtonColor(builder.getButtonBackgroundColor(), lEnter);
         changeButtonColor(builder.getButtonSubmitBackgroundColor(), lEnter);
-        changeButtonColor(builder.getButtonBackgroundColor(), l1, l2, l3, l4, l5, l6, l7, l8, l9, l0, l000, lDot, lMinus, lPlus, lDelete, lMultiply, lDivide, lCancel);
+        changeButtonColor(builder.getButtonBackgroundColor(), l1, l2, l3, l4, l5, l6, l7, l8, l9,
+                l0, l000, lDot, lMinus, lPlus, lDelete, lMultiply, lDivide, lCancel);
 
         changeTextColor(builder.getTextColor(), tEnter);
         changeTextColor(builder.getTextSubmitColor(), tEnter);
-        changeTextColor(builder.getTextColor(), t1, t2, t3, t4, t5, t6, t7, t8, t9, t0, t000, tDot, tMinus, tPlus, tDelete, tMultiply, tDivide, tCancel);
+        changeTextColor(builder.getTextColor(), t1, t2, t3, t4, t5, t6, t7, t8, t9,
+                t0, t000, tDot, tMinus, tPlus, tDelete, tMultiply, tDivide, tCancel);
+        changeButtonTextSize(builder.getTextSize(), t1, t2, t3, t4, t5, t6, t7, t8, t9,
+                t0, t000, tDot, tMinus, tPlus, tDelete, tMultiply, tDivide, tCancel, tEnter);
 
         dialog.setContentView(contentView);
     }
@@ -395,6 +398,19 @@ public class SliderNumPad extends BottomSheetDialogFragment {
             try {
                 if (color != null) {
                     button.setTextColor(Color.parseColor(color));
+                }
+            } catch (Exception ignored) {
+                ignored.printStackTrace();
+            }
+        }
+    }
+
+    private void changeButtonTextSize(float size, Button... buttons) {
+
+        for (Button button : buttons) {
+            try {
+                if (size > 0) {
+                    button.setTextSize(size);
                 }
             } catch (Exception ignored) {
                 ignored.printStackTrace();
@@ -440,6 +456,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
         String textColor = null;
         String textEqualsColor = null;
         String textSubmitColor = null;
+        float textSize = -1;
         OnTextInputFinishListener onTextSelectedListener;
 
         public Builder(@NonNull Context context) {
@@ -512,6 +529,15 @@ public class SliderNumPad extends BottomSheetDialogFragment {
 
         public Builder setTextSubmitColor(String textSubmitColor) {
             this.textSubmitColor = textSubmitColor;
+            return this;
+        }
+
+        public float getTextSize() {
+            return textSize;
+        }
+
+        public Builder setTextSize(float textSize) {
+            this.textSize = textSize;
             return this;
         }
     }

@@ -1,12 +1,11 @@
 package amithgc.slidernumpad.demo;
 
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import amithgc.slidernumpad.SliderNumPad;
 
@@ -27,9 +26,8 @@ public class MainActivity extends AppCompatActivity {
                 SliderNumPad bottomSheetDialogFragment = new SliderNumPad.Builder(MainActivity.this)
                         .setOnTextSelectedListener(new SliderNumPad.OnTextInputFinishListener() {
                             @Override
-                            public void onTextSelected(final Uri uri) {
-                                Log.d("ted", "uri: " + uri);
-                                Log.d("ted", "uri.getPath(): " + uri.getPath());
+                            public void onTextSelected(final double value) {
+                                Toast.makeText(MainActivity.this, "Selected: " + value, Toast.LENGTH_LONG).show();
                             }
                         })
                         .setButtonBackgroundColor("#EEEEEE")

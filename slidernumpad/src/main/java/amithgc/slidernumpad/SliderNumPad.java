@@ -389,7 +389,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                     button.refreshDrawableState();
                 }
             } catch (Exception ignored) {
-                ignored.printStackTrace();
+                Log.d(TAG, ignored.getMessage());
             }
         }
     }
@@ -402,7 +402,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                     button.setTextColor(Color.parseColor(color));
                 }
             } catch (Exception ignored) {
-                ignored.printStackTrace();
+                Log.d(TAG, ignored.getMessage());
             }
         }
     }
@@ -415,7 +415,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                     button.setTextSize(size);
                 }
             } catch (Exception ignored) {
-                ignored.printStackTrace();
+                Log.d(TAG, ignored.getMessage());
             }
         }
     }
@@ -428,7 +428,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                     button.setTypeface(button.getTypeface(), style);
                 }
             } catch (Exception ignored) {
-                ignored.printStackTrace();
+                Log.d(TAG, ignored.getMessage());
             }
         }
     }

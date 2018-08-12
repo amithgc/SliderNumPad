@@ -15,8 +15,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setSingleShowButton();
-
-
     }
 
     private void setSingleShowButton() {
@@ -33,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
                                 Log.d("ted", "uri.getPath(): " + uri.getPath());
                             }
                         })
+                        .setButtonBackgroundColor("#CCCCCC")
+                        .setButtonEqualsBackgroundColor("#24d842")
+                        .setButtonSubmitBackgroundColor("#5982db")
                         .create();
                 bottomSheetDialogFragment.show(getSupportFragmentManager());
             }

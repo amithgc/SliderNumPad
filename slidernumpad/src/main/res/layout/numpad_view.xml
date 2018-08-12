@@ -1,56 +1,260 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:columnCount="4"
-    android:orientation="horizontal">
+    android:orientation="vertical">
 
-    <Button android:text="C" />
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:text=""
+        android:textSize="50sp"
+        android:textStyle="bold" />
 
-    <Button android:text="/" />
+    <TextView
+        android:id="@+id/infoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:text=""
+        android:textSize="15sp" />
 
-    <Button android:text="*" />
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="4"
+        android:orientation="horizontal">
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="BK" />
+        <LinearLayout android:background="@drawable/button_background">
 
-    <Button android:text="7" />
+            <Button
+                android:id="@+id/tCancel"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="C"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
 
-    <Button android:text="8" />
+        <LinearLayout android:background="@drawable/button_background">
 
-    <Button android:text="9" />
+            <Button
+                android:id="@+id/tDivide"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="/"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="+" />
+        <LinearLayout android:background="@drawable/button_background">
 
-    <Button android:text="4" />
+            <Button
+                android:id="@+id/tMultiply"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="*"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
 
-    <Button android:text="5" />
+        <LinearLayout
+            android:layout_gravity="fill"
+            android:background="@drawable/button_background">
 
-    <Button android:text="6" />
+            <Button
+                android:id="@+id/tDelete"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="DEL"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
 
-    <Button
-        android:layout_gravity="fill"
-        android:text="-" />
+        <LinearLayout android:background="@drawable/button_background">
 
-    <Button android:text="1" />
+            <Button
+                android:id="@+id/t7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="7"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
 
-    <Button android:text="2" />
+        <LinearLayout android:background="@drawable/button_background">
 
-    <Button android:text="3" />
+            <Button
+                android:id="@+id/t8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="8"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
 
-    <Button
-        android:layout_gravity="fill"
-        android:layout_rowSpan="2"
-        android:text="=" />
+        <LinearLayout android:background="@drawable/button_background">
 
-    <Button android:text="0" />
+            <Button
+                android:id="@+id/t9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="9"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
 
-    <Button android:text="000" />
+        <LinearLayout
+            android:layout_gravity="fill"
+            android:background="@drawable/button_background">
 
-    <Button android:text="." />
+            <Button
+                android:id="@+id/tPlus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="+"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
 
-</GridLayout>
+        <LinearLayout android:background="@drawable/button_background">
+
+            <Button
+                android:id="@+id/t4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="4"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
+
+        <LinearLayout android:background="@drawable/button_background">
+
+            <Button
+                android:id="@+id/t5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="5"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
+
+        <LinearLayout android:background="@drawable/button_background">
+
+            <Button
+                android:id="@+id/t6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="6"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_gravity="fill"
+            android:background="@drawable/button_background">
+
+            <Button
+                android:id="@+id/tMinus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="-"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
+
+        <LinearLayout android:background="@drawable/button_background">
+
+            <Button
+                android:id="@+id/t1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="1"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
+
+        <LinearLayout android:background="@drawable/button_background">
+
+            <Button
+                android:id="@+id/t2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="2"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
+
+        <LinearLayout android:background="@drawable/button_background">
+
+            <Button
+                android:id="@+id/t3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="3"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_gravity="fill"
+            android:layout_rowSpan="2"
+            android:background="@drawable/button_background">
+
+            <Button
+                android:id="@+id/tEnter"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text=">"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
+
+        <LinearLayout android:background="@drawable/button_background">
+
+            <Button
+                android:id="@+id/t0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="0"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
+
+        <LinearLayout android:background="@drawable/button_background">
+
+            <Button
+                android:id="@+id/t000"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="000"
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
+
+        <LinearLayout android:background="@drawable/button_background">
+
+            <Button
+                android:id="@+id/tDot"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="."
+                android:textSize="@dimen/buttonTextSize"
+                android:theme="@style/PrimaryFlatButton" />
+        </LinearLayout>
+
+
+    </GridLayout>
+</LinearLayout>

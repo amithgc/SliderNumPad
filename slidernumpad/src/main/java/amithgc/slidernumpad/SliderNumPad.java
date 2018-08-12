@@ -267,6 +267,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                 equalButtonType = BUTTON_TYPE_CALCULATE;
                 tEnter.setText("=");
                 changeButtonColor(builder.getButtonEqualsBackgroundColor(), lEnter);
+                changeTextColor(builder.getTextEqualsColor(), tEnter);
             }
         });
 
@@ -281,6 +282,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                 equalButtonType = BUTTON_TYPE_CALCULATE;
                 tEnter.setText("=");
                 changeButtonColor(builder.getButtonEqualsBackgroundColor(), lEnter);
+                changeTextColor(builder.getTextEqualsColor(), tEnter);
             }
         });
 
@@ -295,6 +297,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                 equalButtonType = BUTTON_TYPE_CALCULATE;
                 tEnter.setText("=");
                 changeButtonColor(builder.getButtonEqualsBackgroundColor(), lEnter);
+                changeTextColor(builder.getTextEqualsColor(), tEnter);
             }
         });
 
@@ -309,6 +312,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                 equalButtonType = BUTTON_TYPE_CALCULATE;
                 tEnter.setText("=");
                 changeButtonColor(builder.getButtonEqualsBackgroundColor(), lEnter);
+                changeTextColor(builder.getTextEqualsColor(), tEnter);
             }
         });
 
@@ -354,7 +358,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                 equalButtonType = BUTTON_TYPE_DONE;
                 tEnter.setText(">");
                 changeButtonColor(builder.getButtonSubmitBackgroundColor(), lEnter);
-
+                changeTextColor(builder.getTextSubmitColor(), tEnter);
             }
         });
 
@@ -362,6 +366,10 @@ public class SliderNumPad extends BottomSheetDialogFragment {
         changeButtonColor(builder.getButtonBackgroundColor(), lEnter);
         changeButtonColor(builder.getButtonSubmitBackgroundColor(), lEnter);
         changeButtonColor(builder.getButtonBackgroundColor(), l1, l2, l3, l4, l5, l6, l7, l8, l9, l0, l000, lDot, lMinus, lPlus, lDelete, lMultiply, lDivide, lCancel);
+
+        changeTextColor(builder.getTextColor(), tEnter);
+        changeTextColor(builder.getTextSubmitColor(), tEnter);
+        changeTextColor(builder.getTextColor(), t1, t2, t3, t4, t5, t6, t7, t8, t9, t0, t000, tDot, tMinus, tPlus, tDelete, tMultiply, tDivide, tCancel);
 
         dialog.setContentView(contentView);
     }
@@ -374,6 +382,19 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                     GradientDrawable background = (GradientDrawable) button.getBackground();
                     background.setColor(Color.parseColor(color));
                     button.refreshDrawableState();
+                }
+            } catch (Exception ignored) {
+                ignored.printStackTrace();
+            }
+        }
+    }
+
+    private void changeTextColor(String color, Button... buttons) {
+
+        for (Button button : buttons) {
+            try {
+                if (color != null) {
+                    button.setTextColor(Color.parseColor(color));
                 }
             } catch (Exception ignored) {
                 ignored.printStackTrace();
@@ -416,7 +437,9 @@ public class SliderNumPad extends BottomSheetDialogFragment {
         String buttonBackgroundColor = null;
         String buttonEqualsBackgroundColor = null;
         String buttonSubmitBackgroundColor = null;
-
+        String textColor = null;
+        String textEqualsColor = null;
+        String textSubmitColor = null;
         OnTextInputFinishListener onTextSelectedListener;
 
         public Builder(@NonNull Context context) {
@@ -462,6 +485,33 @@ public class SliderNumPad extends BottomSheetDialogFragment {
 
         public Builder setButtonSubmitBackgroundColor(String buttonSubmitBackgroundColor) {
             this.buttonSubmitBackgroundColor = buttonSubmitBackgroundColor;
+            return this;
+        }
+
+        public String getTextColor() {
+            return textColor;
+        }
+
+        public Builder setTextColor(String textColor) {
+            this.textColor = textColor;
+            return this;
+        }
+
+        public String getTextEqualsColor() {
+            return textEqualsColor;
+        }
+
+        public Builder setTextEqualsColor(String textEqualsColor) {
+            this.textEqualsColor = textEqualsColor;
+            return this;
+        }
+
+        public String getTextSubmitColor() {
+            return textSubmitColor;
+        }
+
+        public Builder setTextSubmitColor(String textSubmitColor) {
+            this.textSubmitColor = textSubmitColor;
             return this;
         }
     }

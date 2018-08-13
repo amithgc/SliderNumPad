@@ -1,5 +1,28 @@
 apply plugin: 'com.android.library'
 
+ext {
+    bintrayRepo = 'Android'
+    bintrayName = 'slider-num-pad'
+
+    publishedGroupId = 'amithgc.slidernumpad'
+    libraryName = 'Slider Num Pad'
+    artifact = 'slider-num-pad'
+
+    libraryDescription = 'An Android Library to show a sliding Number Pad with an inbuilt calculator'
+
+    siteUrl = 'https://github.com/amithgc/SliderNumPad'
+    gitUrl = 'https://github.com/amithgc/SliderNumPad.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'amithgc'
+    developerName = 'Amith Chandrappa'
+    developerEmail = 'amithgc@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
 
 android {
 
@@ -9,7 +32,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 24
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.0"
     }
     buildTypes {
         release {
@@ -39,8 +62,8 @@ dependencies {
     api 'com.android.support:design:27.1.1'
     implementation 'com.android.support:support-annotations:27.1.1'
     javadocDeps 'com.android.support:support-annotations:27.1.1'
-    implementation 'com.github.bumptech.glide:glide:4.7.1'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
 }
 
-apply from: rootProject.file('publish.gradle')
+// Place it at the end of the file
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nuuneoi/JCenter/master/bintrayv1.gradle'

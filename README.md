@@ -27,7 +27,8 @@ If you want a Slideable number pad with an integrated Calculator, you can use th
 [ ![Download](https://api.bintray.com/packages/amithgc/maven/slidernumpad/images/download.svg) ](https://bintray.com/amithgc/maven/slidernumpad/_latestVersion)  
 ```javascript  
 dependencies {  
- compile 'compile 'amithgc.slidernumpad:slidernumpad:1.0.1''}  
+  compile 'amithgc.slidernumpad:slidernumpad:1.0.1'
+}  
   
 ```  
   

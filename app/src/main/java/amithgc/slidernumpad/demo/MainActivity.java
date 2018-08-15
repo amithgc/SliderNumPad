@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
                         .setOnTextSelectedListener(new SliderNumPad.OnTextInputFinishListener() {
                             @Override
                             public void onTextSelected(final double value) {
-                                Toast.makeText(MainActivity.this, "Selected: " + value, Toast.LENGTH_LONG).show();
+                                Toast.makeText(MainActivity.this, "Selected: " + value, Toast.LENGTH_SHORT).show();
                             }
                         })
                         .setButtonBackgroundColor("#efefef")
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                         .setTextSubmitColor("#ffffff")
                         .setTextEqualsColor("#ffffff")
                         .setTextSize(20)
-                        .setTextStyle(Typeface.BOLD_ITALIC)
+                        .setTextStyle(Typeface.NORMAL)
                         .create();
                 bottomSheetDialogFragment.show(getSupportFragmentManager());
             }

@@ -15,11 +15,12 @@ If you want a Slideable number pad with an integrated Calculator, you can use th
   
 ## Demo  
 <br/><br/>  
+![Screenshot](https://github.com/amithgc/SliderNumPad/blob/master/screenshots/1.gif?raw=true)  
+![Screenshot](https://github.com/amithgc/SliderNumPad/blob/master/screenshots/2.gif?raw=true)  
+![Screenshot](https://github.com/amithgc/SliderNumPad/blob/master/screenshots/3.gif?raw=true)  
   
   
-  
-  
-  
+
 ## Setup  
   
   

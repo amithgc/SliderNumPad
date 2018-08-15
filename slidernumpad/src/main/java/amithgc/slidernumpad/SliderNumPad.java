@@ -127,6 +127,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
         contentView = View.inflate(getContext(), R.layout.numpad_view, null);
 
         decimalFormat = new DecimalFormat("#.##########");
+        decimalFormat.setDecimalSeparatorAlwaysShown(false);
 
         result = contentView.findViewById(R.id.result);
         infoTextView = contentView.findViewById(R.id.infoTextView);
@@ -169,7 +170,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
         lMultiply = contentView.findViewById(R.id.lMultiply);
         lDivide = contentView.findViewById(R.id.lDivide);
         lCancel = contentView.findViewById(R.id.lCancel);
-
+        result.setText(decimalFormat.format(builder.getInitialValue()));
 
         t1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -473,6 +474,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
         String textSubmitColor = null;
         float textSize = -1;
         int textStyle = -1;
+        double initialValue = 0;
         OnTextInputFinishListener onTextSelectedListener;
 
         public Builder(@NonNull Context context) {
@@ -563,6 +565,15 @@ public class SliderNumPad extends BottomSheetDialogFragment {
 
         public Builder setTextStyle(int textStyle) {
             this.textStyle = textStyle;
+            return this;
+        }
+
+        public double getInitialValue() {
+            return initialValue;
+        }
+
+        public Builder setInitialValue(double initialValue) {
+            this.initialValue = initialValue;
             return this;
         }
 

@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setSingleShowButton() {
-        Button btn_single_show = (Button) findViewById(R.id.btn_single_show);
+        final Button btn_single_show = (Button) findViewById(R.id.btn_single_show);
         btn_single_show.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -28,8 +28,10 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onTextSelected(final double value) {
                                 Toast.makeText(MainActivity.this, "Selected: " + value, Toast.LENGTH_SHORT).show();
+                                btn_single_show.setText(value + "");
                             }
                         })
+                        .setInitialValue(99)
                         .setButtonBackgroundColor("#efefef")
                         .setButtonEqualsBackgroundColor("#6e84bf")
                         .setButtonSubmitBackgroundColor("#49b756")

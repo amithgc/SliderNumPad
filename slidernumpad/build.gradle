@@ -14,7 +14,7 @@ ext {
     siteUrl = 'https://github.com/amithgc/SliderNumPad'
     gitUrl = 'https://github.com/amithgc/SliderNumPad.git'
 
-    libraryVersion = '1.0.1'
+    libraryVersion = '1.0.2'
 
     developerId = 'amithgc'
     developerName = 'Amith GC'
@@ -33,7 +33,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 24
         versionCode 1
-        versionName "1.0.1"
+        versionName "1.0.2"
     }
     buildTypes {
         release {

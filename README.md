@@ -1,1 +1,1 @@
-Still under development!
+[![Build Status](https://travis-ci.org/amithgc/SliderNumPad.svg?branch=master)](https://travis-ci.org/amithgc/SliderNumPad)

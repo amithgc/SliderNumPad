@@ -30,12 +30,12 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this, "Selected: " + value, Toast.LENGTH_LONG).show();
                             }
                         })
-                        .setButtonBackgroundColor("#EEEEEE")
-                        .setButtonEqualsBackgroundColor("#24d842")
-                        .setButtonSubmitBackgroundColor("#5982db")
-                        .setTextColor("#FF0000")
-                        .setTextSubmitColor("#24d842")
-                        .setTextEqualsColor("#5982db")
+                        .setButtonBackgroundColor("#efefef")
+                        .setButtonEqualsBackgroundColor("#6e84bf")
+                        .setButtonSubmitBackgroundColor("#49b756")
+                        .setTextColor("#999999")
+                        .setTextSubmitColor("#ffffff")
+                        .setTextEqualsColor("#ffffff")
                         .setTextSize(20)
                         .setTextStyle(Typeface.BOLD_ITALIC)
                         .create();

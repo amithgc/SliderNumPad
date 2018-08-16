@@ -1,14 +1,9 @@
-[![Build Status](https://travis-ci.org/amithgc/SliderNumPad.svg?branch=master)](https://travis-ci.org/amithgc/SliderNumPad)   [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/amithgc/SliderNumPad/blob/master/LICENSE.txt)  
+[![Build Status](https://travis-ci.org/amithgc/SliderNumPad.svg?branch=master)](https://travis-ci.org/amithgc/SliderNumPad)   [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/amithgc/SliderNumPad/blob/master/LICENSE.txt)  [ ![Download](https://api.bintray.com/packages/amithgc/maven/slidernumpad/images/download.svg) ](https://bintray.com/amithgc/maven/slidernumpad/_latestVersion)  
   
  
 # What is SliderNumPad?  
-In Google's Material Design, Google introduce **Bottom sheets**.([Components – Bottom sheets](https://material.google.com/components/bottom-sheets.html))<br/>  
-**Bottom sheets** slide up from the bottom of the screen to reveal more content.  
-  
-If you want a Slideable number pad with an integrated Calculator, you can use this library.<br/>  
-  
-**SliderNumPad** is simple number pad using bottom sheet.  
-  
+If you want a Slideable number pad with an integrated Calculator, you can use this library.<br/> This component uses the **Bottom Sheets** for Android from Google.
+    
 <br/><br/>  
   
   
@@ -34,7 +29,7 @@ dependencies {
   
 ## How to use  
 ### 1. Basic Usage  
-SliderNumPad is very easy to use, Just Use the code to render the Number Pad with default configurations.
+SliderNumPad is very easy to use, Just use the following code to render the Number Pad with default configurations.
 <br/>
 ```java
 SliderNumPad bottomSheetDialogFragment = new SliderNumPad.Builder(MainActivity.this)  
@@ -49,7 +44,7 @@ bottomSheetDialogFragment.show(getSupportFragmentManager());
 ```
 
 ### 2. Advanced Usage  
-SliderNubPad also provides different ways to customize the components, You can tune the component as it has to look in your app. Look at the following code for different configurations available.<br/>  
+SliderNumPad also provides different ways to customize the components, You can tune the component as it has to look in your app. Look at the following code for different configurations available.<br/>  
 ```java
 SliderNumPad bottomSheetDialogFragment = new SliderNumPad.Builder(MainActivity.this)  
         .setOnTextSelectedListener(new SliderNumPad.OnTextInputFinishListener() {  
@@ -66,6 +61,7 @@ SliderNumPad bottomSheetDialogFragment = new SliderNumPad.Builder(MainActivity.t
         .setTextEqualsColor("#ffffff")  
         .setTextSize(20)  
         .setTextStyle(Typeface.BOLD_ITALIC)  
+        .setInitialValue (100)
         .create();  
 bottomSheetDialogFragment.show(getSupportFragmentManager());
 ```
@@ -83,6 +79,7 @@ Following are the customisations available in SliderNumPad
 * `setTextEqualsColor("#ffffff")`
 * `setTextSize(20)`
 * `setTextStyle(Typeface.BOLD_ITALIC)`
+* `setInitialValue(Typeface.BOLD_ITALIC)`
 
 <br/><br/>  
   

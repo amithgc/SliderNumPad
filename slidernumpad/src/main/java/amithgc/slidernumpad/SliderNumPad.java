@@ -170,89 +170,97 @@ public class SliderNumPad extends BottomSheetDialogFragment {
         lMultiply = contentView.findViewById(R.id.lMultiply);
         lDivide = contentView.findViewById(R.id.lDivide);
         lCancel = contentView.findViewById(R.id.lCancel);
-        result.setText(decimalFormat.format(builder.getInitialValue()));
+        setResultText(decimalFormat.format(builder.getInitialValue()));
 
         t1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText(result.getText() + "1");
+                setResultText(result.getText() + "1");
             }
         });
 
         t2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText(result.getText() + "2");
+                setResultText(result.getText() + "2");
             }
         });
 
         t3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText(result.getText() + "3");
+                setResultText(result.getText() + "3");
             }
         });
 
         t4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText(result.getText() + "4");
+                setResultText(result.getText() + "4");
             }
         });
 
         t5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText(result.getText() + "5");
+                setResultText(result.getText() + "5");
             }
         });
 
         t6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText(result.getText() + "6");
+                setResultText(result.getText() + "6");
             }
         });
 
         t7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText(result.getText() + "7");
+                setResultText(result.getText() + "7");
             }
         });
 
         t8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText(result.getText() + "8");
+                setResultText(result.getText() + "8");
             }
         });
 
         t9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText(result.getText() + "9");
+                setResultText(result.getText() + "9");
             }
         });
 
         t0.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText(result.getText() + "0");
+                setResultText(result.getText() + "0");
             }
         });
 
         t000.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText(result.getText() + "000");
+                setResultText(result.getText() + "000");
             }
         });
 
         tDot.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                result.setText(result.getText() + ".");
+                try {
+                    if (result.getText().toString().contains(".")) {
+                        return;
+                    }
+                } catch (Exception ignored) {
+
+                }
+                
+                setResultText(result.getText() + ".");
             }
         });
 
@@ -262,7 +270,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                 computeCalculation();
                 CURRENT_ACTION = ADDITION;
                 infoTextView.setText(decimalFormat.format(valueOne) + "+");
-                result.setText(null);
+                setResultText(null);
 
                 equalButtonType = BUTTON_TYPE_CALCULATE;
                 tEnter.setText("=");
@@ -277,7 +285,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                 computeCalculation();
                 CURRENT_ACTION = SUBTRACTION;
                 infoTextView.setText(decimalFormat.format(valueOne) + "-");
-                result.setText(null);
+                setResultText(null);
 
                 equalButtonType = BUTTON_TYPE_CALCULATE;
                 tEnter.setText("=");
@@ -292,7 +300,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                 computeCalculation();
                 CURRENT_ACTION = MULTIPLICATION;
                 infoTextView.setText(decimalFormat.format(valueOne) + "*");
-                result.setText(null);
+                setResultText(null);
 
                 equalButtonType = BUTTON_TYPE_CALCULATE;
                 tEnter.setText("=");
@@ -307,7 +315,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                 computeCalculation();
                 CURRENT_ACTION = DIVISION;
                 infoTextView.setText(decimalFormat.format(valueOne) + "/");
-                result.setText(null);
+                setResultText(null);
 
                 equalButtonType = BUTTON_TYPE_CALCULATE;
                 tEnter.setText("=");
@@ -321,11 +329,11 @@ public class SliderNumPad extends BottomSheetDialogFragment {
             public void onClick(View view) {
                 if (result.getText().length() > 0) {
                     CharSequence currentText = result.getText();
-                    result.setText(currentText.subSequence(0, currentText.length() - 1));
+                    setResultText(currentText.subSequence(0, currentText.length() - 1).toString());
                 } else {
                     valueOne = Double.NaN;
                     valueTwo = Double.NaN;
-                    result.setText("");
+                    setResultText("");
                     infoTextView.setText("");
                 }
             }
@@ -336,7 +344,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
             public void onClick(View view) {
                 valueOne = Double.NaN;
                 valueTwo = Double.NaN;
-                result.setText("");
+                setResultText("0");
                 infoTextView.setText("");
             }
         });
@@ -347,7 +355,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                 computeCalculation();
                 infoTextView.setText(infoTextView.getText().toString() +
                         decimalFormat.format(valueTwo) + " = " + decimalFormat.format(valueOne));
-                result.setText(decimalFormat.format(valueOne));
+                setResultText(decimalFormat.format(valueOne));
 
                 if (equalButtonType == BUTTON_TYPE_DONE) {
                     dismissAllowingStateLoss();
@@ -378,6 +386,30 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                 t0, t000, tDot, tMinus, tPlus, tDelete, tMultiply, tDivide, tCancel, tEnter);
 
         dialog.setContentView(contentView);
+    }
+
+    private void setResultText(String text) {
+
+        if (text != null) {
+
+            if (text.endsWith(".")) {
+                result.setText(text);
+                return;
+            }
+
+            if (text.length() == 0 && (infoTextView.getText() == null || infoTextView.getText().toString().length() == 0)) {
+                text = "0";
+            }
+
+            try {
+                double textValue = Double.valueOf(text);
+                text = decimalFormat.format(textValue);
+
+            } catch (Exception ignored) {
+            }
+        }
+
+        result.setText(text);
     }
 
     private void changeButtonColor(String color, LinearLayout... buttons) {
@@ -438,7 +470,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
         if (!Double.isNaN(valueOne)) {
             try {
                 valueTwo = Double.parseDouble(result.getText().toString());
-                result.setText(null);
+                setResultText(null);
 
                 if (CURRENT_ACTION == ADDITION)
                     valueOne = this.valueOne + valueTwo;
@@ -449,7 +481,7 @@ public class SliderNumPad extends BottomSheetDialogFragment {
                 else if (CURRENT_ACTION == DIVISION)
                     valueOne = this.valueOne / valueTwo;
             } catch (Exception e) {
-                result.setText(decimalFormat.format(valueOne));
+                setResultText(decimalFormat.format(valueOne));
             }
         } else {
             try {
